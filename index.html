@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Larsi's - Podcast</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/memphis11/Podcasts/main/favicon.png">
+
+    <style>
+        :root{
+            --brand:#5cad7e;
+            --bg:#ffffff;
+            --radius:12px;
+            --maxw:1200px;
+        }
+
+        /* ===== Grundlayout ===== */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ffffff, #ffffff);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center; /* globale Zentrierung */
+            color:#222;
+        }
+        header {
+            background-color: #ffffff;
+            width: 100%;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        h1 { margin: 0; font-size: 2rem; }
+        h2 { margin: 0.4rem 0; }
+        h4, h5 { margin: 0.3rem 0; }
+
+        .logo img {
+            height: 332px;
+            width: auto;
+            display: inline-block;
+        }
+
+        /* Linie unter dem Header – unten etwas weniger Abstand,
+           damit die Section-Überschrift näher heranrückt */
+        hr {
+            width: 60%;
+            border: none;
+            border-top: 8px solid var(--brand);
+            margin: 1.2rem 0 0.6rem; /* vorher 2rem 0; jetzt kleiner */
+        }
+
+        /* ===== Buttons / CTA (global) ===== */
+        .video-button {
+            background-color: var(--brand);
+            color: white;
+            border: none;
+            padding: 1rem;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.25s ease;
+            height: 56px;
+            min-width: 220px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+        .video-button:hover { background-color: #4da46f; }
+
+        /* kompakter Button (kleiner) */
+        .btn-small{
+            height: 40px;
+            min-width: unset;
+            padding: 0 14px;
+            font-size: 0.92rem;
+            border-radius: 999px; /* pill */
+        }
+
+        /* ===== Zweispaltiger Themen-Block ===== */
+        .two-col-wrapper{
+            width:100%;
+            display:flex;
+            justify-content:center;
+        }
+        /* Überschrift der Section – weniger Top-Abstand */
+        .section-title{
+            color: var(--brand);
+            margin: 12px 0 10px; /* höher an die Linie gerückt */
+        }
+        .two-col{
+            max-width: var(--maxw);
+            width: 100%;
+            display: grid;
+            grid-template-columns: 2fr 1fr;   /* links größer, rechts schmaler */
+            gap: 40px;
+            align-items: start;
+            padding: 0 24px;
+            margin: 10px 0 40px;
+        }
+        .two-col .left,
+        .two-col .right{
+            background: #f7f9f8;
+            border-radius: var(--radius);
+            padding: 24px;
+            text-align: left;           /* innerhalb der Spalten linksbündig */
+        }
+        .info-badge{
+            display:inline-block;
+            background:#e6f3eb;
+            color:#2f6b4a;
+            padding:6px 10px;
+            border-radius:8px;
+            font-size:0.9rem;
+            margin-bottom:12px;
+        }
+        .two-col .left h3,
+        .two-col .left h4{ color: var(--brand); margin:10px 0; }
+
+        /* CTA-Zeile: Text + kleiner Button nebeneinander */
+        .cta-row{
+            display:flex;
+            align-items:center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+        .cta-row h4{
+            margin: 0;
+            color: var(--brand);
+        }
+
+        .right .panel{
+            background:#ffffff;
+            border:1px solid #e6e6e6;
+            border-radius:10px;
+            padding:18px;
+        }
+        .right .panel + .panel{ margin-top:16px; }
+        .right .panel h4{ margin:0 0 10px 0; color:#2e2e2e; }
+        .right .panel p{ margin:0 0 16px 0; color:#555; }
+
+        /* kleiner Button NUR im rechten Panel (falls du ihn dort behalten willst) */
+        .right .panel .video-button{
+            width: 160px;
+            height: 44px;
+            font-size: 0.95rem;
+            min-width: unset;
+            padding: 0 12px;
+            margin: 0 auto;
+            border-radius: 999px;
+        }
+
+        /* Responsive: unter 900px einspaltig */
+        @media (max-width: 900px){
+            .two-col{
+                grid-template-columns: 1fr;
+                gap:20px;
+            }
+            /* im mobilen Layout die CTA-Zeile untereinander */
+            .cta-row{ gap:10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: #5cad7e;">Mit Red Bull in der Hand</h1>
+        <h1 style="color: #5cad7e;">--- Lars öffnet die Büchse der Pandora ---</h1>
+        <br>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/memphis11/Podcasts/main/LuLu.PNG" alt="Logo">
+        </div>
+        <br>
+        <h2 style="color: #5cad7e;">IT ist wie ein Eisberg: oben cool, unten richtig tief.</h2>
+        <h4>Wer genauer hinschaut, sieht mehr als nur die Spitze – und taucht ein in die Welt, in der der kleine Eisbär, sich pudelwohl fühlt...</h4>
+    </header>
+
+    <hr>
+
+    <!-- ===== Überschrift über beiden Spalten (höher positioniert) ===== -->
+    <h2 class="section-title">Themen die wirklich Interessieren</h2>
+
+    <!-- ===== Zweispaltiger Bereich: Links Text, Rechts anderes ===== -->
+    <div class="two-col-wrapper">
+        <section class="two-col">
+
+            <!-- Linke Spalte -->
+            <div class="left">
+
+                <span class="info-badge">Multi‑Faktor‑Authentifizierung (MFA)</span>
+
+                <h5>Die Multi-Faktor-Authentifizierung ist inzwischen überall – ob bei Amazon, Facebook, WhatsApp, im Microsoft-Universum oder auch in unseren Albträumen.</h5>
+                <h5>Sie soll uns schützen: vor Hackern, Phishing-Angriffen und dem eigenen Klick-Reflex.</h5>
+                <h5>Doch wie sicher ist MFA wirklich?</h5>
+
+                <br>
+
+                <h5 style="color: #5cad7e;">In dieser Folge werfen wir einen Blick hinter die Kulissen und ich zeige euch, wie man MFA „theoretisch“ austricksen könnte.</h5>
+                <h5 style="color: #5cad7e;">Keine Sorge – es geht nicht darum, euch zu digitalen Schurken zu machen. Vielmehr will ich zeigen, wo die Schwachstellen lauern und wie man sie clever absichert.</h5>
+
+                <br>
+
+                <!-- Text + Button NEBENEINANDER -->
+                <div class="cta-row">
+                    <h4>Bald wird die Büchse geöffnet!</h4>
+                    <a class="video-button btn-small" href="#" role="button" aria-label="zum Video">zum Video</a>
+                </div>
+            </div>
+
+            <!-- Rechte Spalte -->
+            <aside class="right">
+                <div class="panel">
+                    <h4>Powershell Skripte</h4>
+                    <p>Hier geht es zu den ultimativen Skripten:</p>
+                    <a class="video-button" href="#" role="button" aria-label="zur Skriptsammlung">zu den Skripten</a>
+                </div>
+
+                <!-- Optional: zweites Panel
+                <div class="panel">
+                    <h4>Hier entsteht bald was Neues</h4>
+                    <img src="https://raw.githubusercontent.com/memphis11/Podcasts/main/LuLu.PNG" alt="Teaser" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+                -->
+            </aside>
+
+        </section>
+    </div>
+</body>
+</html>
